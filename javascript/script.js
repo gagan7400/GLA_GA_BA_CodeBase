@@ -1,184 +1,272 @@
-// console.log("file connected");
+// // console.log("file connected");
 
-// // keyword identifier/varibalename assignment data
-// let price = 4000; // number
-// const discount = false;// boolean , null ,undefiend
-// // Object , Array,function  , Symbol , BigInt
+// // // keyword identifier/varibalename assignment data
+// // let price = 4000; // number
+// // const discount = false;// boolean , null ,undefiend
+// // // Object , Array,function  , Symbol , BigInt
 
-// data = "hello world";
-// console.log(data);
-
-
-// // var keyword
-// // scope - globally scoped and functional scoped
-// // we can reassign value .
-// // reclaration is also possible
-
-// // function test() {
-// //     var username = "harry";
-// //     console.log(username)
-// // }
-// // console.log(username)
-// // hoisting  , moved all the declration to the top of the  file  , but it cannot move the data
-// console.log(user)
-// var user = "harry";//string
-
-// console.log(user);
-// user = 100; // reassignment
-// console.log(user);
-// var user = "another user"; // redeclaration
-// console.log(user);
+// // data = "hello world";
+// // console.log(data);
 
 
-// // let and const
-// //  Let keyword is blocked scoped variable,
-// // we can reassign its value , but cannot redeclare it.
+// // // var keyword
+// // // scope - globally scoped and functional scoped
+// // // we can reassign value .
+// // // reclaration is also possible
 
+// // // function test() {
+// // //     var username = "harry";
+// // //     console.log(username)
+// // // }
+// // // console.log(username)
+// // // hoisting  , moved all the declration to the top of the  file  , but it cannot move the data
+// // console.log(user)
+// // var user = "harry";//string
+
+// // console.log(user);
+// // user = 100; // reassignment
+// // console.log(user);
+// // var user = "another user"; // redeclaration
+// // console.log(user);
+
+
+// // // let and const
+// // //  Let keyword is blocked scoped variable,
+// // // we can reassign its value , but cannot redeclare it.
+
+// // // console.log(time);
+// // let time = "morning";
 // // console.log(time);
-// let time = "morning";
-// console.log(time);
-// // {
-// //     let date = 12 ;
-// // }
-// // console.log(date);it show error becauseof blocked scope of let keyword
-// time = "evening";
-// console.log(time)
+// // // {
+// // //     let date = 12 ;
+// // // }
+// // // console.log(date);it show error becauseof blocked scope of let keyword
+// // time = "evening";
+// // console.log(time)
 
-// // var time = "night"; redeclaration isnot possible here
+// // // var time = "night"; redeclaration isnot possible here
 
-// // let and const
-// //  const keyword is blocked scoped variable,
-// // we cannot reassign its value , and also cannot redeclare it.
-// const For = "raj";
+// // // let and const
+// // //  const keyword is blocked scoped variable,
+// // // we cannot reassign its value , and also cannot redeclare it.
+// // const For = "raj";
 
-// // variable naming rules
-// // cannot start with numberical value
-// //do not use any special charchter , except _ and $ ,
-// // do not use any space btween variable names
-// // do not use any reserved keyword .
+// // // variable naming rules
+// // // cannot start with numberical value
+// // //do not use any special charchter , except _ and $ ,
+// // // do not use any space btween variable names
+// // // do not use any reserved keyword .
 
-// // data types of data
+// // // data types of data
 
-// //primitive and  non primitive data types
-// // string ,number,BigInt ,Boolean , null , undefined
-// // symbol
-// // array ,object , function
-// console.log(typeof (null));
-// console.log(typeof ([]));
-// console.log(typeof ({}));
+// // //primitive and  non primitive data types
+// // // string ,number,BigInt ,Boolean , null , undefined
+// // // symbol
+// // // array ,object , function
+// // console.log(typeof (null));
+// // console.log(typeof ([]));
+// // console.log(typeof ({}));
 
 
-// // operators
-// // arithmatic operator  + ,- ,* , / ,**, %
-// let a = 10;
-// let b = 20;
-// console.log(10 + "10");
-// console.log(10 - "10");
+// // // operators
+// // // arithmatic operator  + ,- ,* , / ,**, %
+// // let a = 10;
+// // let b = 20;
+// // console.log(10 + "10");
+// // console.log(10 - "10");
 
-// // comparison operator
-// //  < , > ,<=,>= ,== ,=== ,!= ,!==
-// console.log(10 < 11)
-// console.log(10 > 9)
-// console.log(10 <= 10)
-// console.log(10 >= 3)
-// console.log(10 == '10')
-// console.log(10 === '10');
-// console.log(10 != '10');
-// console.log(10 !== '10');
+// // // comparison operator
+// // //  < , > ,<=,>= ,== ,=== ,!= ,!==
+// // console.log(10 < 11)
+// // console.log(10 > 9)
+// // console.log(10 <= 10)
+// // console.log(10 >= 3)
+// // console.log(10 == '10')
+// // console.log(10 === '10');
+// // console.log(10 != '10');
+// // console.log(10 !== '10');
 
-// // asignement operator
-// // = , +=, -=,/=,*= , **= , %= , ++ , --
-// let p = 10;
-// console.log(p)
-// p += 10;
-// console.log(p)
-// p -= 10;
-// console.log(p);
-// p *= 10
-// console.log(p)
-// p **= 10
-// console.log(p);
+// // // asignement operator
+// // // = , +=, -=,/=,*= , **= , %= , ++ , --
+// // let p = 10;
+// // console.log(p)
+// // p += 10;
+// // console.log(p)
+// // p -= 10;
+// // console.log(p);
+// // p *= 10
+// // console.log(p)
+// // p **= 10
+// // console.log(p);
 
-// // increment++  and decrement--
-// // increment is used to increase the value 1 by 1 and it  is divided in two  type pre increment and post increment ,
-// // ++p ,// pre increment ,first increment and then use/print
-// // p++ post increment .first print/use then increment
+// // // increment++  and decrement--
+// // // increment is used to increase the value 1 by 1 and it  is divided in two  type pre increment and post increment ,
+// // // ++p ,// pre increment ,first increment and then use/print
+// // // p++ post increment .first print/use then increment
 
-// let x = 10;
-// // x++
-// console.log(x++, x);
-// console.log(x++  + ++x)
-// console.log(x);
-// // decrement is used to decrease the value 1 by 1 and it  is divided in two  type pre decrement and post decrement ,
-// // ++p ,// pre decrement ,first decrement and then use/print
-// // p++ post decrement .first print/use then decrement
-// let j =10;
-// --j
-// console.log(j) ;
+// // let x = 10;
+// // // x++
+// // console.log(x++, x);
+// // console.log(x++  + ++x)
+// // console.log(x);
+// // // decrement is used to decrease the value 1 by 1 and it  is divided in two  type pre decrement and post decrement ,
+// // // ++p ,// pre decrement ,first decrement and then use/print
+// // // p++ post decrement .first print/use then decrement
+// // let j =10;
+// // --j
+// // console.log(j) ;
 
-// console.log(--j + j );
+// // console.log(--j + j );
 
-// //logical operator
-// // && ,|| ,!
-// console.log(true && true) //true
-// console.log(true && false) //false
-// console.log(false && true) //false
-// console.log(false  && false ) //false
+// // //logical operator
+// // // && ,|| ,!
+// // console.log(true && true) //true
+// // console.log(true && false) //false
+// // console.log(false && true) //false
+// // console.log(false  && false ) //false
 
-// // console.log(false && "hello");
-// console.log(true || true) //true
-// console.log(true || false) //true
-// console.log(false || true) //true
-// console.log(false  || false ) //false
+// // // console.log(false && "hello");
+// // console.log(true || true) //true
+// // console.log(true || false) //true
+// // console.log(false || true) //true
+// // console.log(false  || false ) //false
 
-// console.log(true || "hello")
-// console.log(false || "hello")
+// // console.log(true || "hello")
+// // console.log(false || "hello")
 
-// // ! not
-// console.log(!true)
-// console.log(!false)
-// console.log(!0)
-// console.log(!1)
-// console.log(!null)
-// console.log(!undefined)
-// console.log(![])
-// console.log(!"bn")
-// console.log(!"")
-
-
-// // scope
-// //global scope
-// // ,block scope
-// // function scope \
+// // // ! not
+// // console.log(!true)
+// // console.log(!false)
+// // console.log(!0)
+// // console.log(!1)
+// // console.log(!null)
+// // console.log(!undefined)
+// // console.log(![])
+// // console.log(!"bn")
+// // console.log(!"")
 
 
-// // type conversion
-
-// //type coerison
-// console.log(10 - '10');
-// console.log(10 + '10');
-
-// //type convesion
-// // Number ,Boolean , String
-// console.log(Number("10"))
-// console.log(Number("dds"))
-// console.log(Boolean("dfd"))
-// console.log(Boolean(0))
-// console.log(String(100))
-// console.log(String(true));
+// // // scope
+// // //global scope
+// // // ,block scope
+// // // function scope \
 
 
-// // Math Object
-// console.log(Math.random() * 99999 )
-// console.log(Math.round(4.6))
-// console.log(Math.floor(4.3));
-// console.log(Math.abs(-10))
-// console.log(Math.max(10,100,11));
-// console.log(Math.min(10,100,11));
-// console.log(Math.sqrt(144))
-// console.log(Math.pow(2,2))
-// console.log(Math.ceil(5.1))
+// // // type conversion
+
+// // //type coerison
+// // console.log(10 - '10');
+// // console.log(10 + '10');
+
+// // //type convesion
+// // // Number ,Boolean , String
+// // console.log(Number("10"))
+// // console.log(Number("dds"))
+// // console.log(Boolean("dfd"))
+// // console.log(Boolean(0))
+// // console.log(String(100))
+// // console.log(String(true));
 
 
-//  //14oct topics ,Lecture 3
-//  // String , if-else,else-if,nested if ,switch,ternary operator
+// // // Math Object
+// // console.log(Math.random() * 99999 )
+// // console.log(Math.round(4.6))
+// // console.log(Math.floor(4.3));//rounds down the value
+// // console.log(Math.abs(-10))//absolute positive value
+// // console.log(Math.max(10,100,11));
+// // console.log(Math.min(10,100,11));
+// // console.log(Math.sqrt(144))
+// // console.log(Math.pow(2,2))
+// // console.log(Math.ceil(5.1))
+
+
+// //14oct topics ,Lecture 3
+// // String , if-else,else-if,nested if ,switch,ternary operator
+// //string
+// // collection on charchters , immutable data 
+// // let str = ' hello world ';
+// // let str2 = "hello world";
+// // let str3 = `hello world`;//template litral/string
+// //string methods ,length
+// // console.log(str);
+// // console.log(str2);
+// // console.log(str3);
+// let str = "this is the first string";
+// console.log(str.length);
+// console.log(str.at(10));//undefined
+// console.log(str.charAt(10));// empty
+// console.log(str.at(-1));//last index value
+// console.log(str.charAt(-1));//empty/
+// //charCodeAt , indexOf ,lastIndexOf ,includes
+// console.log(str.charCodeAt(0));
+// // a-b :- 97-122 ,A-B:- 65-90 ,0-9:- 48-57 ,space:-32.
+// console.log(str.indexOf("i"))//2
+// //it print -1 when the given  charchter is not available in the string
+// console.log(str.lastIndexOf("i"));
+// console.log(str.includes("this")); // boolean
+
+// str = " This is the First String ";
+// console.log(str.startsWith(" this"));;//false 
+// console.log(str.endsWith("is"));;//false
+// console.log(str.concat(" new string "));;
+// console.log(str + " new string ");;
+// // used to merge the strings
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
+// console.log(str)
+// console.log(str.trim())
+// console.log(str.trimStart())//remove the starting extraspace
+// console.log(str.trimEnd())//remove the ending extraspace
+// let data = "this is the new text";
+// // data = "helllllllllllo"//reassginment
+// // console.log(data, data.length);
+// console.log(data.padEnd(7, "0"))
+// console.log(data.padStart(8, "+"))//maxlength , fullfiling value
+// console.log(data.replace("l", "k"));
+// console.log(data.replaceAll("l", "k"));
+// console.log(data.split(" "));
+
+// let name = prompt("pls enter your name");
+// //prompt always gives us string data type ;
+
+// // console.log(name, typeof (name));
+// // find the length of the name
+// // console.log(name.length);
+// // count words
+// console.log(name);
+// console.log(name.split(" ").length);
+// console.log(name.trim().split(" ").length);
+
+// ternary operator
+// condition ? true : false ;
+let condition = !true ? "hello world" : "not found"
+
+console.log(condition)
+
+console.log(true ? "hello world" : "not found")
+
+// if ,if else , else if ladder ,nested if
+
+// conditionals :- if
+
+if (true) {
+    console.log("condition is true")
+};
+
+if (false) {
+    console.log("condition is true");
+} else {
+    console.log("condition is false");
+}
+
+let num = Number(prompt("enter any number"))
+console.log(num);
+if (num > 0) {
+    console.log(num)
+} else {
+    console.log(-num)
+}
+
+//15 oct topics ,Lecture 4
+// if, if-else, switch, ternary operator Lab: Age Eligibility Checker (Task 5)
+// for, while, do-while, Nested Loops
