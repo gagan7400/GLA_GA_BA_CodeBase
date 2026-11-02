@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .parent,
+        .child {
+            border: solid;
+            padding: 10px;
+            width: fit-content;
+        }
+
+        .parent {
+            background: blue;
+        }
+
+        .child {
+            background: aqua;
+        }
+    </style>
 </head>
-<body>
-    <script src="script.js"></script>
+
+<!-- <body onkeyup="eventHandler('up')"
+ onkeydown="eventHandler('down')"> -->
+
+<body onload="eventHandler('load')" onscroll="eventHandler('scroll')" onresize="eventHandler('resize')">
+
+    <form>
+        <input type="text" oninput="eventHandler('input')" onfocus="eventHandler('focus')"
+            onblur="eventHandler('blur')">
+        <select name="" id="" onchange="eventHandler('change')">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </form>
+    <!-- <div class="parent" onclick="eventHandler('parent')">
+        <p>parent div </p>
+        <div class="child" onclick="eventHandler('child div')">
+            <p>child div</p>
+            <button onclick="eventHandler('button')">inner btn </button>
+        </div>
+    </div> -->
+    <div class="parent">
+        <p>parent div </p>
+        <div class="child">
+            <p>child div</p>
+            <button>inner btn </button>
+        </div>
+    </div>
+    <script>
+        let parentdiv = document.querySelector(".parent");
+        let innerdiv = document.querySelector(".child");
+        let btn = document.querySelector(".child button");
+
+        parentdiv.addEventListener("click", (event) => {
+            console.log("parent ")
+        })
+        innerdiv.addEventListener("click", (event) => {
+            event.stopPropagation()
+            console.log("child")
+        })
+        btn.addEventListener("click", (event) => {
+            event.stopPropagation()
+            console.log("btn")
+        })
+    </script>
+    <button onclick="eventHandler('click')"> click</button>
+    <button onclick="console.log('output')"> click</button>
+    <button ondblclick="eventHandler('dblclick')"> dblclick</button>
+    <button oncontextmenu="eventHandler('contextmenu')"> contextmenu</button>
+    <button onmouseover="eventHandler('mouseover')"> mouseover</button>
+    <button onmouseenter="eventHandler('mouseenter')"> mouseenter</button>
+    <button onmouseleave="eventHandler('mouseleave')"> mouseleave</button>
+    <button onmouseout="eventHandler('mouseout')"> mouseout</button>
+    <button onmousemove="eventHandler('mousemove')"> mousemove</button>
+    <button onmousewheel="eventHandler('mousewheel')"> mousewheel</button>
+    <input type="text">
+
+
+
+
+    <!-- <audio src="/"></audio>
+    <h1>hello world</h1>
+    <p id="para1" class="paraclass">null</p>
+    <p id="para2" class="paraclass">Hello World</p>
+    <p id="para3" class="paraclass">Hello World</p>
+    <div class="paraclass">
+        <p>hello world Div</p>
+        <h1>Hello world</h1>
+        <button>details</button>
+    </div>
+    <form>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="radio" name="gender" value="male">
+        <input type="radio" name="gender" value="female">
+    </form>
+    <a href="#">Link </a>
+    <a href="#">Link </a>
+    <a href="#">Link </a> -->
+    <script src="./script.js"></script>
 </body>
+
 </html>
