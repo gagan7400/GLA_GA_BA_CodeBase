@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .form {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            margin-top: 100px;
+            width: fit-content;
+            height: fit-content;
+            padding: 30px;
+            background: aqua;
+            display: flex;
+            font-size: 20px;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+        }
+
+        form button {
+            font-size: 20px;
+            padding: 5px 10px;
+            width: fit-content;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .showtodos {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: fit-content;
+            height: 200px;
+            padding: 10px;
+            background: blue;
+            color: white;
+        }
+
+        .card p {
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <form>
+            <div class="inputs">
+                <label for="title">Title</label> <br>
+                <input type="text" name="title" id="title">
+            </div>
+            <div class="inputs">
+                <label for="description">Description</label> <br>
+                <input type="text" name="description" id="description">
+            </div>
+            <div class="inputs">
+                <label for="date">End Date</label> <br>
+                <input type="date" name="date" id="date">
+            </div>
+            <button>submit</button>
+        </form>
+    </div>
+    <div class="showtodos"> </div>
+    <script>
+
+        let todos = [];
+        let form = document.querySelector("form");
+        form.addEventListener("submit", getTodo)
+
+        function getTodo(event) {
+            event.preventDefault()
+            let title = document.querySelector("#title").value
+            let description = document.querySelector("#description").value
+            let date = document.querySelector("#date").value;
+            let newtodo = { title, description, date };
+            todos.push(newtodo);
+            showtodos()
+            form.reset();
+        }
+        function deletehandler(index) {
+            console.log(index)
+            todos.splice(index, 1)
+            showtodos();
+        }
+        function showtodos() {
+            let box = document.querySelector(".showtodos");
+            box.innerHTML = ""
+            todos.map((v, i) => {
+                box.innerHTML += `
+        <div class="card">
+        <p>${v.title} </p> 
+        <p>${v.description} </p> 
+        <p>${v.date} </p> 
+        <button onclick="deletehandler(${i})"> delete </button>
+        </div> `
+            });
+        } 
+    </script>
+</body>
+
+</html>

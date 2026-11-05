@@ -1018,10 +1018,39 @@
 // types of events:mouseevent,keyboard ,window events,form
 //click ,dblclick,contextmenu
 
-function eventHandler(eventname) {
-    console.log(eventname);
-    // document.body.style.background ="blue";
-    // document.body.style.background =`rgb(${Math.random()*100} ,${Math.random()*4} ,${Math.random()*300} )`
-}
+
+
+
+// function eventHandler(eventname) {
+//     console.log(eventname);
+//     // document.body.style.background ="blue";
+//     // document.body.style.background =`rgb(${Math.random()*100} ,${Math.random()*4} ,${Math.random()*300} )`
+// }
 // rgb(22,44,556) 
 //
+
+// let parentdiv = document.querySelector(".parent");
+//         let innerdiv = document.querySelector(".child");
+//         let btn = document.querySelector(".child button");
+
+//         parentdiv.addEventListener("click", (event) => {
+//             console.log("parent ")
+//         })
+//         innerdiv.addEventListener("click", (event) => {
+//             event.stopPropagation()
+//             console.log("child")
+//         })
+//         btn.addEventListener("click", (event) => {
+//             event.stopPropagation()
+//             console.log("btn")
+//         })
+
+// Topic Left ,
+// example of delegation , debounce, throtle ,add window events ,form events
+// todo task .
+// image gallary,
+//settimeout , setInterval ,Event Loop .
+
+//todo List :- using DOM ;
+//create html Form , with Title, description  ,complete date , 
+//submit button  ,display the data below the form .

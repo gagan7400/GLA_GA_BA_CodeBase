@@ -21,14 +21,41 @@
             background: aqua;
         }
     </style>
+    <style>
+        .imgs {
+            border: 1px solid;
+            padding: 10px;
+            margin: auto;
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .show {
+            width: 350px;
+            margin: auto;
+            height: 350px;
+            border: solid;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <!-- <body onkeyup="eventHandler('up')"
  onkeydown="eventHandler('down')"> -->
 
-<body onload="eventHandler('load')" onscroll="eventHandler('scroll')" onresize="eventHandler('resize')">
+<!-- <body onload="eventHandler('load')" onscroll="eventHandler('scroll')" onresize="eventHandler('resize')"> -->
 
-    <form>
+<body>
+
+    <!--    <form>
         <input type="text" oninput="eventHandler('input')" onfocus="eventHandler('focus')"
             onblur="eventHandler('blur')">
         <select name="" id="" onchange="eventHandler('change')">
@@ -38,38 +65,21 @@
             <option>4</option>
         </select>
     </form>
-    <!-- <div class="parent" onclick="eventHandler('parent')">
+     <div class="parent" onclick="eventHandler('parent')">
         <p>parent div </p>
         <div class="child" onclick="eventHandler('child div')">
             <p>child div</p>
             <button onclick="eventHandler('button')">inner btn </button>
         </div>
-    </div> -->
-    <!-- <div class="parent">
+    </div>
+     <div class="parent">
         <p>parent div </p>
         <div class="child">
             <p>child div</p>
             <button>inner btn </button>
         </div>
     </div>
-    <script>
-        let parentdiv = document.querySelector(".parent");
-        let innerdiv = document.querySelector(".child");
-        let btn = document.querySelector(".child button");
-
-        parentdiv.addEventListener("click", (event) => {
-            console.log("parent ")
-        })
-        innerdiv.addEventListener("click", (event) => {
-            event.stopPropagation()
-            console.log("child")
-        })
-        btn.addEventListener("click", (event) => {
-            event.stopPropagation()
-            console.log("btn")
-        })
-    </script> -->
-    <!-- <button onclick="eventHandler('click')"> click</button>
+      <button onclick="eventHandler('click')"> click</button>
     <button onclick="console.log('output')"> click</button>
     <button ondblclick="eventHandler('dblclick')"> dblclick</button>
     <button oncontextmenu="eventHandler('contextmenu')"> contextmenu</button>
@@ -79,12 +89,8 @@
     <button onmouseout="eventHandler('mouseout')"> mouseout</button>
     <button onmousemove="eventHandler('mousemove')"> mousemove</button>
     <button onmousewheel="eventHandler('mousewheel')"> mousewheel</button>
-    <input type="text"> -->
-
-
-
-
-    <!-- <audio src="/"></audio>
+    <input type="text"> 
+     <audio src="/"></audio>
     <h1>hello world</h1>
     <p id="para1" class="paraclass">null</p>
     <p id="para2" class="paraclass">Hello World</p>
@@ -103,6 +109,9 @@
     <a href="#">Link </a>
     <a href="#">Link </a>
     <a href="#">Link </a> -->
+     
+    
+    
     <script src="./script.js"></script>
 </body>
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .showimg {
+            margin: auto;
+            width: 200px;
+            height: 300px;
+            border: solid;
+            padding: 10px;
+        }
+
+        .gallary {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            border: solid;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="showimg">
+        <img src="../images/img1.jpg" alt="">
+    </div>
+    <div class="gallary">
+        <img src="../images/img1.jpg" alt="">
+        <img src="../images/img2.jpg" alt="">
+    </div>
+    <script>
+        let gallary = document.querySelector(".gallary");
+        gallary.addEventListener("click", (event) => {
+            console.log(event.target.src)//select the child element
+            console.log(event.currentTarget);//select the parent element
+            if (event.target.src) {
+                document.querySelector(".showimg img").src = event.target.src
+            }
+        })
+    </script>
+</body>
+
+</html>
