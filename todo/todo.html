@@ -3,13 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Todo Cards</title>
     <style>
         * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
+        }
+
+        :root {
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #dbe8ff 0%, #f5f9ff 45%, #ffffff 100%);
+            background-attachment: fixed;
+            color: #14213d;
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            padding: 0 16px 60px;
         }
 
         .form {
@@ -21,51 +35,142 @@
         }
 
         form {
-            margin-top: 100px;
-            width: fit-content;
+            margin: 60px 0 50px;
+            width: 100%;
+            max-width: 400px;
             height: fit-content;
-            padding: 30px;
-            background: aqua;
+            padding: 32px 28px;
+            background: #ffffff;
+            border-radius: 20px;
+            border-top: 8px solid #2563eb;
+            box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18);
             display: flex;
-            font-size: 20px;
+            font-size: 18px;
             flex-direction: column;
-            gap: 10px;
-            border-radius: 10px;
+            gap: 16px;
         }
 
-        form button {
-            font-size: 20px;
-            padding: 5px 10px;
-            width: fit-content;
-            border-radius: 10px;
+        label {
+            display: inline-block;
+            margin-bottom: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e3a8a;
         }
 
         input {
-            padding: 5px 10px;
-            border-radius: 10px;
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 16px;
+            color: #14213d;
+            background: #f1f6ff;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            background: #ffffff;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+        }
+
+        form button {
+            width: 100%;
+            font-size: 17px;
+            font-weight: 700;
+            padding: 13px 24px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.45);
+        }
+
+        form button:active {
+            transform: translateY(0);
         }
 
         .showtodos {
             width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
             height: auto;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: stretch;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 24px;
         }
 
         .card {
-            width: fit-content;
-            height: 200px;
-            padding: 10px;
-            background: blue;
-            color: white;
+            width: 260px;
+            min-height: 210px;
+            padding: 22px 20px 20px;
+            background: #ffffff;
+            color: #14213d;
+            border-radius: 18px;
+            border-left: 6px solid #2563eb;
+            box-shadow: 0 10px 28px rgba(30, 58, 138, 0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-wrap: anywhere;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 36px rgba(30, 58, 138, 0.2);
         }
 
         .card p {
-            font-size: 20px;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #3d4b6b;
+        }
 
+        .card p:first-child {
+            font-size: 21px;
+            font-weight: 700;
+            color: #1d4ed8;
+        }
+
+        .card p:nth-child(3) {
+            align-self: flex-start;
+            padding: 4px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e3a8a;
+            background: #dbe8ff;
+            border-radius: 999px;
+        }
+
+        .card button {
+            margin-top: auto;
+            align-self: flex-end;
+            padding: 8px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #dc2626;
+            background: #fff1f1;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .card button:hover {
+            background: #dc2626;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -89,41 +194,7 @@
         </form>
     </div>
     <div class="showtodos"> </div>
-    <script>
-
-        let todos = [];
-        let form = document.querySelector("form");
-        form.addEventListener("submit", getTodo)
-
-        function getTodo(event) {
-            event.preventDefault()
-            let title = document.querySelector("#title").value
-            let description = document.querySelector("#description").value
-            let date = document.querySelector("#date").value;
-            let newtodo = { title, description, date };
-            todos.push(newtodo);
-            showtodos()
-            form.reset();
-        }
-        function deletehandler(index) {
-            console.log(index)
-            todos.splice(index, 1)
-            showtodos();
-        }
-        function showtodos() {
-            let box = document.querySelector(".showtodos");
-            box.innerHTML = ""
-            todos.map((v, i) => {
-                box.innerHTML += `
-        <div class="card">
-        <p>${v.title} </p> 
-        <p>${v.description} </p> 
-        <p>${v.date} </p> 
-        <button onclick="deletehandler(${i})"> delete </button>
-        </div> `
-            });
-        } 
-    </script>
+     
 </body>
 
 </html>
