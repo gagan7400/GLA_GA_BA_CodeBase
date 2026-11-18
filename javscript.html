@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button onclick="stop()">stop</button>
+    <p>count </p>
+    <div> </div>
+    <label for="">Enter Count</label> <br>
+    <input type="text"> <br> <br>
+    <button onclick="startCount()">Start Counting</button>
+    <button onclick="stop()">Stop Counting</button> -->
+    <script>
+        // let interval;
+        // function startCount() {
+        //     let inp = document.querySelector("input").value;
+        //     interval = setInterval(() => {
+        //         count++
+        //         if (count == inp) {
+        //             clearInterval(interval);
+        //         }
+        //         document.querySelector("p").textContent = "count" + count
+        //         document.querySelector("div").innerHTML += "<p>para " + count + " </p>"
+        //     }, 100);
+        // }
+
+        // function stop() {
+        //     clearInterval(interval);
+        // }
+        // let timeout = setTimeout((a) => {
+        //     console.log("timeout", a);
+        // }, 2000, "hello");
+        // let count = 0;
+
+
+        // console.log("first ")
+        // new Promise((resolve, reject) => {
+        //     resolve("pass")
+        // }).then((r) => { console.log(r) })
+        // async function fun() {
+        //     await console.log("midd1 ")
+        //     console.log("midd2 ")
+        // }
+        // fun()
+        // setTimeout(() => {
+        //     console.log("timeout")
+        // }, 0);
+        // console.log("last")
+
+        // let pro = new Promise((resolve, reject) => {
+        //     // setTimeout(() => {
+        //     reject("promise is reject")
+        //     // resolve("promises is fullfilled");
+        //     // }, 2000);
+        // });
+        // // console.log(pro);
+        // let pass = (res) => { console.log("passed", res) };
+        // let fail = (err) => { console.log("failed", err) }
+        // pro.then(pass).catch(fail);
+        // data.then((result)=>{return  result.json() }).then(pass).catch(fail);
+
+        // let posts = fetch("https://jsonplaceholder.typicode.com/posts");
+        // let pro = new Promise((resolve, reject) => {
+        //     reject("promise is reject")
+        // });
+        // Promise.all([posts, pro]).then((res) => { console.log(res) }).catch((err) => { console.log(err) })
+
+        // Promise.allSettled([posts, pro]).then((res) => { console.log(res) }).catch((err) => { console.log(err) })
+
+        // Promise.race([posts, pro]).then((res) => { console.log(res) }).catch((err) => { console.log(err) })
+
+        // Promise.any([posts, pro]).then((res) => { console.log(res) }).catch((err) => { console.log(err) })
+
+        //  async await
+        async function getdata() {
+            try {
+                let data = await fetch("https://jsonplaceholder.typicode.com/posts");
+                let res = await data.json()
+                // console.log(res);
+                return res
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getdata().then((re) => {
+            console.log(re)
+        })
+
+
+        // get data 
+        let api = "https://jsonplaceholder.typicode.com/posts"
+        let data = fetch(api, {
+            method: "GET",
+            headers: { "token": "xyz", }
+        });
+        console.log(data);
+
+        let createUser = async () => {
+            let newuser = await fetch(api, {
+                method: "POST",
+                body: JSON.stringify({ title: "first", body: "hello" }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            let res = await newuser.json();
+            console.log(res)
+        }
+        createUser();
+        let updateUser = async () => {
+            let newuser = await fetch(api+"/1", {
+                method: "PUT",
+                body: JSON.stringify({ title: "first", body: "hello" }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            let res = await newuser.json();
+            console.log(res)
+        }
+        updateUser();
+        let deleteUser = async () => {
+            let newuser = await fetch(api+"/1", {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            let res = await newuser.json();
+            console.log(res);
+        }
+        deleteUser();
+// BA:- 2,3,5,7,9,12,13,14,15,16,17,18,20,22,25,27,30,31,33,34,35,
+//GA :- 1,2,8,10,12,14,16,17,19,27,29,39,40
+
+
+    </script>
+</body>
+
+</html>

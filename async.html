@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- What is Async Await 
+     async/await is a cleaner way to work with Promises. It lets you write asynchronous code (like fetching data or reading files) so it looks like normal, top-to-bottom synchronous code.
+     async goes before a function. It makes that function always return a Promise.
+     await goes before a Promise, inside an async function. It pauses that function until the Promise settles, then gives you the result.
+     await only pauses the async function, not the whole program. Other code keeps running.
+     
+     Same thing with Promises vs async/await
+
+-->
+     <script>
+        // Promise chain:
+fetch("/api/user")
+  .then(res => res.json())
+  .then(user => console.log(user))
+  .catch(err => console.error(err));
+
+// async/await:
+async function loadUser() {
+  try {
+    const res = await fetch("/api/user");
+    const user = await res.json();
+    console.log(user);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// The second reads more naturally, especially as the steps grow.
+     </script>
+</body>
+
+</html>

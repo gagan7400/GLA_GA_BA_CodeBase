@@ -1,23 +1,42 @@
 
 let todos = [];
+let updateIndex = null;
+let update = false;
 let form = document.querySelector("form");
-form.addEventListener("submit", getTodo)
+let title = document.querySelector("#title")
+let description = document.querySelector("#description")
+let date = document.querySelector("#date");
+let submitbtn = document.querySelector("form button");
 
+form.addEventListener("submit", getTodo)
 function getTodo(event) {
     event.preventDefault()
-    let title = document.querySelector("#title").value
-    let description = document.querySelector("#description").value
-    let date = document.querySelector("#date").value;
-    let newtodo = { title, description, date };
-    todos.push(newtodo);
+    let newtodo = { title: title.value, description: description.value, date: date.value };
+    if (update) {
+        todos.splice(updateIndex, 1, newtodo);
+        update = false;
+        submitbtn.textContent = "submit"
+        updateIndex = null;
+    } else {
+        todos.push(newtodo);
+    }
     showtodos()
-    form.reset();
+    // form.reset();
 }
 function deletehandler(index) {
-    console.log(index)
     todos.splice(index, 1)
     showtodos();
 }
+function updatehandler(index) {
+    update = true
+    updateIndex = index;
+    title.value = todos[index].title
+    description.value = todos[index].description
+    date.value = todos[index].date;
+    submitbtn.textContent = "update"
+};
+
+
 function showtodos() {
     let box = document.querySelector(".showtodos");
     box.innerHTML = ""
@@ -27,7 +46,8 @@ function showtodos() {
         <p>${v.title} </p> 
         <p>${v.description} </p> 
         <p>${v.date} </p> 
-        <button onclick="deletehandler(${i})"> delete </button>
+        <div><button onclick="deletehandler(${i})"> delete </button>
+        <button onclick="updatehandler(${i})"> update </button></div>
         </div> `
     });
 } 
