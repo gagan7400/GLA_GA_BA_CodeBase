@@ -15,7 +15,7 @@
     <input type="text"> <br> <br>
     <button onclick="startCount()">Start Counting</button>
     <button onclick="stop()">Stop Counting</button> -->
-    <script>
+    <!-- <script>
         // let interval;
         // function startCount() {
         //     let inp = document.querySelector("input").value;
@@ -113,7 +113,7 @@
         }
         createUser();
         let updateUser = async () => {
-            let newuser = await fetch(api+"/1", {
+            let newuser = await fetch(api + "/1", {
                 method: "PUT",
                 body: JSON.stringify({ title: "first", body: "hello" }),
                 headers: {
@@ -125,7 +125,7 @@
         }
         updateUser();
         let deleteUser = async () => {
-            let newuser = await fetch(api+"/1", {
+            let newuser = await fetch(api + "/1", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
@@ -135,11 +135,21 @@
             console.log(res);
         }
         deleteUser();
-// BA:- 2,3,5,7,9,12,13,14,15,16,17,18,20,22,25,27,30,31,33,34,35,
-//GA :- 1,2,8,10,12,14,16,17,19,27,29,39,40
+        // BA:- 2,3,5,7,9,12,13,14,15,16,17,18,20,22,25,27,30,31,33,34,35,
+        //GA :- 1,2,8,10,12,14,16,17,19,27,29,39,40
 
+        // topics:- JSON ,regex ,University search Api
+        // JSON:-Javascript Object Notation
+        "it is a format, used to transfer data btw servers ,and used in all programing languages"
+    
 
-    </script>
+    </script> -->
+    <script src="script.js">  </script>
+    <!-- raj -->
+    <students>
+        <name>raj</name>
+    </students>
+    <!-- students =[{"name":"raj"}] -->
 </body>
 
 </html>

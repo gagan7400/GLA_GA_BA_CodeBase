@@ -1,1 +1,1 @@
-University_api : http://universities.hipolabs.com/search?&country=india&limit=10
+University_api : http://universities.hipolabs.com/search?&country=india

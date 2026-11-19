@@ -1,5 +1,5 @@
 
-let todos = [];
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 let updateIndex = null;
 let update = false;
 let form = document.querySelector("form");
@@ -7,7 +7,7 @@ let title = document.querySelector("#title")
 let description = document.querySelector("#description")
 let date = document.querySelector("#date");
 let submitbtn = document.querySelector("form button");
-
+showtodos();
 form.addEventListener("submit", getTodo)
 function getTodo(event) {
     event.preventDefault()
@@ -22,10 +22,12 @@ function getTodo(event) {
     }
     showtodos()
     // form.reset();
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 function deletehandler(index) {
     todos.splice(index, 1)
     showtodos();
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 function updatehandler(index) {
     update = true
