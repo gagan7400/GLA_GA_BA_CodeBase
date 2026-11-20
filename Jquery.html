@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="firstp" class="firstpara">hello world</p>
+    <p>this is para</p>
+    <p>this is para</p>
+    <p>this is para</p>
+    <p>this is para</p>
+    <p>this is para</p>
+    <p>this is para</p>
+
+    <input type="text">
+    <input type="text">
+    <input type="radio">
+    <a href="www.">link1</a>
+    <a href="http://localhost"> link2</a>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        console.log($);
+        console.log($("*"))//it target complete html tag ;
+        //in vanilla javascript document.querySelector("p").textContent = "this is new text";
+        $("p").text("this is new text");
+        $("#firstp").text("this is  updated by id");
+        $(".firstpara").text("this is updated by class");
+        $("div ,p").css("border", "solid")
+        $("div p").css("border", "solid")
+        $("div > p").css("border", "solid")
+
+        console.log($("[type=radio]"));
+        console.log($("[href^=www]").text("target"));//start with 
+        $("p:first").text("this is first");
+        $("p:last").text("this is last");
+        $("p:even").text("this is even");
+        $("p:odd").text("this is odd");
+        $("p:nth-child(4)").text("this is 4th child");
+
+        // BA:- 2,7,12,13,20,22,24,25,27,29,31,33,35, 
+        // GA:- 14,39
+    </script>
+</body>
+
+</html>
